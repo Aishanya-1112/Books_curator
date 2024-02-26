@@ -201,7 +201,7 @@ def main():
                         st.image(cover_image_link, caption='Cover Image', width=150)
                     else:
                         st.write("Cover Image not available")
-                    if preview_link:
+                    #if preview_link:
                         #st.write("Preview Link:", preview_link)
-    if __name__ == '__main__':
-        main()
+if __name__ == '__main__':
+    main()
