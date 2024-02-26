@@ -203,5 +203,5 @@ def main():
                         st.write("Cover Image not available")
                     if preview_link:
                         #st.write("Preview Link:", preview_link)
-if __name__ == '__main__':
-    main()
+    if __name__ == '__main__':
+        main()
