@@ -190,9 +190,10 @@ def main():
                     authors = volume_info.get('authors', ['Unknown'])
                     description = volume_info.get('description', 'No description available')
                     cover_image_link = volume_info['imageLinks']['thumbnail'] if 'imageLinks' in volume_info else 'No cover available'
-                    preview_link = volume_info.get('previewLink', 'No preview available')  # Assign preview_link here
+                    
+                    # Assign preview_link with a default value if not available
+                    preview_link = volume_info.get('previewLink', 'No preview available')  
                 
-                    # Display book information and preview link
                     st.markdown(f'<div style="background-color: black; padding: 10px; text-align: center; text-transform: uppercase; color: white;">Title: {title}</div>', unsafe_allow_html=True)
                     st.markdown("")
                     st.markdown(f'<div style="text-align: center; text-transform: uppercase; color: white;">Author: {", ".join(authors)}</div>', unsafe_allow_html=True)
@@ -202,7 +203,10 @@ def main():
                         st.image(cover_image_link, caption='Cover Image', width=150)
                     else:
                         st.write("Cover Image not available")
-                    # st.write("Preview Link:", preview_link)
+                    
+                    # Now it's safe to reference preview_link
+                    st.write("Preview Link:", preview_link)
+
 
 if __name__ == '__main__':
     main()
